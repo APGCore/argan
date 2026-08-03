@@ -66,7 +66,7 @@ const timelineData: TimelineItem[] = [
         date: '28 Februari 2025',
         title: 'PT Dwi Kusuma Perkasa',
         badgeType: 'akuisisi',
-        badgeText: 'Acquisition',
+        badgeText: 'Akuisisi',
     },
     {
         id: '7',
@@ -94,7 +94,7 @@ const timelineData: TimelineItem[] = [
         date: '1 November 2025',
         title: 'APG Group',
         badgeType: 'operasional',
-        badgeText: 'Operational',
+        badgeText: 'Operasional',
         description: 'Mulai Operasional',
     },
     {

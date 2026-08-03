@@ -289,6 +289,26 @@ export default function Home({ greetings }: HomeProps) {
                 {/* ==================== TIMELINE SECTION ==================== */}
                 <TimelineSection />
 
+                {/* ==================== TRANSITION MESSAGE ==================== */}
+                <section className="relative py-20 md:py-32 px-6" id="transition-section" data-animate>
+                    <div 
+                        className={`max-w-4xl mx-auto text-center font-serif transition-all duration-1000 ${
+                            isVisible['transition-section']
+                                ? 'opacity-100 translate-y-0'
+                                : 'opacity-0 translate-y-10'
+                        }`}
+                    >
+                        <h2 className="text-3xl md:text-5xl text-gold-400 font-bold mb-10 md:mb-14 leading-relaxed">
+                            Terima kasih, Bapak Ari Perdana Gandhi.
+                        </h2>
+                        <div className="space-y-6 md:space-y-8 text-xl md:text-3xl text-gold-200/80 leading-relaxed italic">
+                            <p>Karena Bapak berani memulai...</p>
+                            <p>Hari ini, kami menemukan tempat untuk bertumbuh.</p>
+                            <p>Dan dengan bangga, menjadi bagian dari perjalanan ini.</p>
+                        </div>
+                    </div>
+                </section>
+
                 {/* ==================== SECTION 2: VIDEO ==================== */}
                 <section className="relative pt-12 pb-16 md:pt-20 md:pb-24 px-6" id="video-section" data-animate>
                     <div className="max-w-4xl mx-auto">
