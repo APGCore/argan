@@ -20,8 +20,7 @@ const timelineData: TimelineItem[] = [
         title: 'PT Buana Perkasa Rajanegara',
         badgeType: 'berdiri',
         badgeText: 'Berdiri',
-        description: 'Awal perjalanan perusahaan sebagai fondasi berkembangnya Ardana Perkasa Group.',
-        hasPhoto: true,
+        description: 'Agen Asuransi & Penjaminan. Awal perjalanan perusahaan sebagai fondasi berkembangnya Ardana Perkasa Group.',
     },
     {
         id: '2',
@@ -33,10 +32,10 @@ const timelineData: TimelineItem[] = [
     {
         id: '3',
         date: '15 Februari 2024',
-        title: 'PT Ardana Perkasa Group',
+        title: 'Ardana Perkasa Group',
         badgeType: 'berdiri',
         badgeText: 'Berdiri',
-        description: 'Holding company yang dibentuk untuk menyatukan visi dan pertumbuhan seluruh perusahaan dalam grup.',
+        description: 'Sebagai Holding atau pilar utama yang menyatukan visi dan pertumbuhan seluruh perusahaan dalam grup.',
     },
     {
         id: '4',
@@ -67,6 +66,7 @@ const timelineData: TimelineItem[] = [
         title: 'PT Dwi Kusuma Perkasa',
         badgeType: 'akuisisi',
         badgeText: 'Akuisisi',
+        description: 'Agen Asuransi & Penjaminan',
     },
     {
         id: '7',
@@ -74,6 +74,7 @@ const timelineData: TimelineItem[] = [
         title: 'PT SIP BRO Delapan Perkasa',
         badgeType: 'akuisisi',
         badgeText: 'Akuisisi',
+        description: 'Agen Asuransi & Penjaminan',
     },
     {
         id: '8',
@@ -81,18 +82,20 @@ const timelineData: TimelineItem[] = [
         title: 'PT Qalifa Jamin Perkasa',
         badgeType: 'berdiri',
         badgeText: 'Didirikan',
+        description: 'Penjaminan Digital',
     },
     {
         id: '9',
         date: '1 Juli 2025',
-        title: 'Ardana Perkasa Badminton Club',
+        title: 'Prada Badminton Club',
         badgeType: 'perkumpulan',
         badgeText: 'Perkumpulan',
+        description: 'Klub Olahraga',
     },
     {
         id: '10',
         date: '1 November 2025',
-        title: 'APG Group',
+        title: 'Ardana Perkasa Group',
         badgeType: 'operasional',
         badgeText: 'Operasional',
         description: 'Mulai Operasional',
@@ -110,6 +113,7 @@ const timelineData: TimelineItem[] = [
         title: 'PT Caraka Mulia Insurance Brokers & Consultants',
         badgeType: 'akuisisi',
         badgeText: 'Akuisisi',
+        description: 'Pialang dan Konsultan Asuransi',
     },
 ];
 
