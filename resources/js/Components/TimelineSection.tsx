@@ -293,7 +293,12 @@ export default function TimelineSection() {
 
                                     {/* Content Container (Alternating) */}
                                     <div className={`w-full md:w-1/2 flex pl-16 md:pl-0 ${isLeft ? 'md:justify-end md:pr-16' : 'md:justify-start md:pl-16'}`}>
-                                        <div className="group w-full max-w-lg p-6 rounded-2xl border border-gold-600/10 bg-[#0A0E1A]/80 backdrop-blur-sm transition-all duration-500 hover:scale-[1.02] hover:border-gold-500/30 hover:shadow-[0_10px_40px_rgba(244,180,0,0.05)] cursor-default">
+                                        <div 
+                                            className="group w-full max-w-lg p-6 rounded-2xl border border-gold-600/20 shadow-[0_4px_20px_rgba(0,0,0,0.3)] backdrop-blur-sm transition-all duration-500 hover:scale-[1.02] hover:border-gold-500/40 hover:shadow-[0_10px_40px_rgba(244,180,0,0.08)] cursor-default"
+                                            style={{
+                                                background: 'linear-gradient(145deg, rgba(26, 26, 46, 0.6), rgba(10, 14, 26, 0.8))'
+                                            }}
+                                        >
                                             
                                             {/* Date */}
                                             <div className="text-gold-400 font-semibold tracking-wider text-sm mb-2">
@@ -349,11 +354,22 @@ export default function TimelineSection() {
                     }`}
                 >
                     <div className="flex flex-wrap justify-center items-center gap-6 mb-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-700">
-                        {/* Fake logos */}
-                        <div className="w-12 h-12 rounded-lg bg-navy-800 border border-gold-600/20 flex items-center justify-center text-gold-500/50 font-bold text-xs">APG</div>
-                        <div className="w-12 h-12 rounded-lg bg-navy-800 border border-gold-600/20 flex items-center justify-center text-gold-500/50 font-bold text-xs">BPR</div>
-                        <div className="w-12 h-12 rounded-lg bg-navy-800 border border-gold-600/20 flex items-center justify-center text-gold-500/50 font-bold text-xs">DKP</div>
-                        <div className="w-12 h-12 rounded-lg bg-navy-800 border border-gold-600/20 flex items-center justify-center text-gold-500/50 font-bold text-xs">CM</div>
+                        {/* Company Logos */}
+                        <div className="h-12 md:h-14 w-auto bg-white rounded-lg p-2 shadow-sm border border-gold-600/20 flex items-center justify-center transition-transform hover:scale-110">
+                            <img src="/images/logos/dwp.jpeg" alt="DWP" className="h-full w-auto object-contain" />
+                        </div>
+                        <div className="h-12 md:h-14 w-auto bg-white rounded-lg p-2 shadow-sm border border-gold-600/20 flex items-center justify-center transition-transform hover:scale-110">
+                            <img src="/images/logos/qjamin.jpeg" alt="Q Jamin" className="h-full w-auto object-contain" />
+                        </div>
+                        <div className="h-12 md:h-14 w-auto bg-white rounded-lg p-2 shadow-sm border border-gold-600/20 flex items-center justify-center transition-transform hover:scale-110">
+                            <img src="/images/logos/sipbro.jpeg" alt="SIP BRO" className="h-full w-auto object-contain" />
+                        </div>
+                        <div className="h-12 md:h-14 w-auto bg-white rounded-lg p-2 shadow-sm border border-gold-600/20 flex items-center justify-center transition-transform hover:scale-110">
+                            <img src="/images/logos/bpr.jpeg" alt="BPR" className="h-full w-auto object-contain" />
+                        </div>
+                        <div className="h-12 md:h-14 w-auto bg-white rounded-lg p-2 shadow-sm border border-gold-600/20 flex items-center justify-center transition-transform hover:scale-110">
+                            <img src="/images/logos/plnc.jpeg" alt="PLNC" className="h-full w-auto object-contain" />
+                        </div>
                     </div>
                     
                     <h3 className="font-serif text-2xl md:text-3xl text-gold-400 mb-4 font-semibold italic">
