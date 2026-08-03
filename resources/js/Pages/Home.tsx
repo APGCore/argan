@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { Head } from '@inertiajs/react';
 import GreetingModal from '../Components/GreetingModal';
+import TimelineSection from '../Components/TimelineSection';
 
 // Types
 interface Greeting {
@@ -285,8 +286,11 @@ export default function Home({ greetings }: HomeProps) {
                     />
                 </section>
 
+                {/* ==================== TIMELINE SECTION ==================== */}
+                <TimelineSection />
+
                 {/* ==================== SECTION 2: VIDEO ==================== */}
-                <section className="relative py-20 md:py-32 px-6" id="video-section" data-animate>
+                <section className="relative pt-12 pb-16 md:pt-20 md:pb-24 px-6" id="video-section" data-animate>
                     <div className="max-w-4xl mx-auto">
                         {/* Section title */}
                         <div
@@ -348,7 +352,7 @@ export default function Home({ greetings }: HomeProps) {
 
                 {/* ==================== SECTION 3: UCAPAN LIST ==================== */}
                 <section
-                    className="relative py-20 md:py-32 px-6"
+                    className="relative pt-16 pb-20 md:pt-24 md:pb-32 px-6"
                     id="ucapan-section"
                     data-animate
                 >
@@ -418,15 +422,14 @@ export default function Home({ greetings }: HomeProps) {
 
                         {/* Greeting cards */}
                         {greetings.length > 0 ? (
-                            <div className="space-y-4">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                                 {greetings.map((greeting, index) => (
                                     <div
                                         key={greeting.id}
-                                        className="group rounded-2xl p-6 md:p-8 transition-all duration-700 hover:scale-[1.01]"
+                                        className="group rounded-2xl p-6 md:p-8 transition-all duration-700 hover:scale-[1.01] border border-gold-600/10 hover:border-gold-500/40"
                                         style={{
                                             background:
                                                 'linear-gradient(145deg, rgba(26, 26, 46, 0.6), rgba(10, 14, 26, 0.8))',
-                                            border: '1px solid rgba(201, 168, 76, 0.1)',
                                             transitionDelay: `${Math.min(index * 100, 500)}ms`,
                                             opacity: isVisible['ucapan-section'] ? 1 : 0,
                                             transform: isVisible['ucapan-section']
@@ -434,39 +437,28 @@ export default function Home({ greetings }: HomeProps) {
                                                 : 'translateY(20px)',
                                         }}
                                     >
-                                        <div className="flex flex-col md:flex-row md:items-start gap-4">
-                                            {/* Number badge */}
-                                            <div
-                                                className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold text-navy-950"
-                                                style={{
-                                                    background:
-                                                        'linear-gradient(135deg, #e2b33e, #c9a84c)',
-                                                }}
-                                            >
-                                                {index + 1}
-                                            </div>
-
+                                        <div className="flex flex-col h-full">
                                             {/* Content */}
-                                            <div className="flex-1 min-w-0">
+                                            <div className="flex-1 min-w-0 flex flex-col h-full">
                                                 <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-3">
                                                     <h3 className="font-serif text-lg font-semibold text-gold-300">
                                                         {greeting.nama}
                                                     </h3>
-                                                    <span className="inline-flex items-center px-3 py-0.5 rounded-full text-xs font-medium bg-gold-600/10 text-gold-500 border border-gold-600/20">
+                                                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-gold-600/10 text-gold-500 border border-gold-600/20">
+                                                        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                                        </svg>
                                                         {greeting.perusahaan}
                                                     </span>
                                                 </div>
-                                                <p className="text-gold-200/60 leading-relaxed whitespace-pre-line">
+                                                <p className="text-gold-200/60 leading-relaxed whitespace-pre-line flex-grow">
                                                     &ldquo;{greeting.ucapan}&rdquo;
                                                 </p>
-                                                <p className="text-gold-200/25 text-xs mt-3">
+                                                <p className="text-gold-200/25 text-xs mt-4">
                                                     {formatDate(greeting.created_at)}
                                                 </p>
                                             </div>
                                         </div>
-
-                                        {/* Bottom accent line on hover */}
-                                        <div className="h-px mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 gold-shimmer rounded-full" />
                                     </div>
                                 ))}
                             </div>
@@ -506,11 +498,11 @@ export default function Home({ greetings }: HomeProps) {
                         <p className="text-gold-200/60 text-sm mt-4">
                             Dengan doa terbaik dari keluarga besar Ardana Perkasa Group dan seluruh anak perusahaan.
                         </p>
-                        <p className="text-gold-200/50 text-xs mt-3 flex items-center justify-center gap-2">
+                        <div className="text-gold-200/50 text-xs mt-3 flex flex-col md:flex-row items-center justify-center gap-1.5 md:gap-2">
                             <span>© {new Date().getFullYear()} Ardana Perkasa Group.</span>
-                            <span className="text-gold-500/40">•</span>
+                            <span className="text-gold-500/40 hidden md:inline">•</span>
                             <span>Dibuat dengan penuh rasa hormat & bangga <span className="text-red-500">❤️</span></span>
-                        </p>
+                        </div>
                     </div>
                 </footer>
             </div>
