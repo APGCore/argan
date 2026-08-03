@@ -1,0 +1,154 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-serif: 'Playfair Display', ui-serif, Georgia, serif;
+
+    --color-gold-50: #fdf9ef;
+    --color-gold-100: #f9f0d4;
+    --color-gold-200: #f2dea4;
+    --color-gold-300: #e9c76a;
+    --color-gold-400: #e2b33e;
+    --color-gold-500: #d4a037;
+    --color-gold-600: #c9a84c;
+    --color-gold-700: #a67c20;
+    --color-gold-800: #876321;
+    --color-gold-900: #6e5220;
+
+    --color-navy-50: #eef2ff;
+    --color-navy-100: #dde4ff;
+    --color-navy-200: #c3cdfe;
+    --color-navy-300: #98a6fc;
+    --color-navy-400: #6c75f8;
+    --color-navy-500: #4b4ef3;
+    --color-navy-600: #3a2fe7;
+    --color-navy-700: #3224d4;
+    --color-navy-800: #291fac;
+    --color-navy-900: #0a0e1a;
+    --color-navy-950: #050510;
+}
+
+/* Custom scrollbar for dark theme */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-navy-900);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-gold-700);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-gold-500);
+}
+
+/* Shimmer animation for gold accents */
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+.gold-shimmer {
+    background: linear-gradient(
+        90deg,
+        var(--color-gold-700) 0%,
+        var(--color-gold-400) 25%,
+        var(--color-gold-300) 50%,
+        var(--color-gold-400) 75%,
+        var(--color-gold-700) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+/* Floating particles animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+}
+
+.particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--color-gold-400);
+    border-radius: 50%;
+    animation: float linear infinite;
+    pointer-events: none;
+}
+
+/* Subtle pulse glow */
+@keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(201, 168, 76, 0.2); }
+    50% { box-shadow: 0 0 40px rgba(201, 168, 76, 0.4); }
+}
+
+.glow-pulse {
+    animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Fade in animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-delay-100 { animation-delay: 0.1s; }
+.animate-delay-200 { animation-delay: 0.2s; }
+.animate-delay-300 { animation-delay: 0.3s; }
+.animate-delay-400 { animation-delay: 0.4s; }
+.animate-delay-500 { animation-delay: 0.5s; }
+
+/* Modal backdrop */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-backdrop {
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+.modal-content {
+    animation: slideUp 0.4s ease-out forwards;
+}
+
+/* Success checkmark */
+@keyframes scaleIn {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+}
+
+.success-icon {
+    animation: scaleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
